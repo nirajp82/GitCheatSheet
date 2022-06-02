@@ -3,6 +3,18 @@ Reference: https://www.interviewbit.com/git-cheat-sheet/
 #
 https://www.interviewbit.com/git-interview-questions/
 
+Resolve Git Conflict while pushing the code
+######
+git switch US154956_DataStorePreloadAsyncAwait
+git rebase Development
+----#Perform following steps for each conflict
+	Resolve Conflict in Tortist Git
+	git rebase --continue
+	vi editor will open, Add comment or exit by :q
+-----Once conflict resolves push the changes	
+git push --force-with-lease
+######
+
 git log
 git log --graph --decorate --oneline
 git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
