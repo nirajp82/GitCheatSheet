@@ -5,13 +5,13 @@ https://www.interviewbit.com/git-interview-questions/
 
 Resolve Git Conflict while pushing the code
 ######
-git switch US154956_DataStorePreloadAsyncAwait
-git rebase Development
+git switch Target_Branch
+git rebase Master_Branch
 ----#Perform following steps for each conflict
 	Resolve Conflict in Tortist Git
 	git rebase --continue
 	vi editor will open, Add comment or exit by :q
------Once conflict resolves push the changes	
+-----Once conflict resolves push the changes to TargetBranch	
 git push --force-with-lease
 ######
 
