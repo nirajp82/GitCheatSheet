@@ -1,9 +1,31 @@
 # Git Cheat Sheet
 Reference: https://www.interviewbit.com/git-cheat-sheet/
 #
+#
+https://anshbadaya.medium.com/customizing-windows-terminal-with-posh-git-and-oh-my-posh-752c0e0eb8cb
+https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 
+#Import the modules
+Import-Module posh-git
+Import-Module oh-my-posh
+#Set-PoshPrompt -Theme Paradox
+Set-PoshPrompt C:\Users\NirajP\Documents\PowerShell\Themes\agnoster.omp.json
+# Produce UTF-8 by default
+# https://news.ycombinator.com/item?id=12991690
+$PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
+# bash-style completion
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
+#Change directory
+#cd c:\bitbucket\cloud
+
+#
+#
 https://www.interviewbit.com/git-interview-questions/
-
+#
+#
 Resolve Git Conflict while pushing the code
 ######
 git switch Target_Branch
