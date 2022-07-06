@@ -37,7 +37,21 @@ git rebase Master_Branch
 -----Once conflict resolves push the changes to TargetBranch	
 git push --force-with-lease
 ######
+#
+git cherry-pick : Apply the changes introduced by some existing commits
 
+Assume we have branch A with (X, Y, Z) commits. We need to add these commits to branch B. We are going to use the cherry-pick operations.
+
+When we use cherry-pick, we should add commits on branch B in the same chronological order that the commits appear in Branch A.
+
+cherry-pick does support a range of commits, but if you have merge commits in that range, it gets really complicated
+
+git checkout B
+git cherry-pick SHA-COMMIT-X
+git cherry-pick SHA-COMMIT-Y
+git cherry-pick SHA-COMMIT-Z
+
+#
 git log
 git log --graph --decorate --oneline
 git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
