@@ -131,7 +131,10 @@ Git push origin master [tag_name]
 Git push origin master --tags 
 Git push origin :[tagName]
 git push --force-with-lease
-
+####
+Zip modified files to C:\ Drive
+zip "C:\ModifiedFiles_$(git branch --show-current)_$((Get-Date).ToString('yyyyMMdd_HHmmss')).zip" $(git ls-files --modified)
+####
 Rebase vs merge  
 Short Version
 Merge takes all the changes in one branch and merges them into another branch in one commit.
@@ -154,6 +157,7 @@ Let's say you have created a branch for the purpose of developing a single featu
 Rebase
 A second scenario would be if you started doing some development and then another developer made an unrelated change. You probably want to pull and then rebase to base your changes from the current version from the repository.
 
+#####
 
 
 
