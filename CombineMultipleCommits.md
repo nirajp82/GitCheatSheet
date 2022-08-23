@@ -15,7 +15,7 @@ Suppose that you want to merge the last 3 commits into a single commit. To do th
 
 >> git rebase -i HEAD~3
 
-Note: HEAD~3 means three commits prior to the HEAD. You can select the appropriate commit by its hash.
+Note: HEAD~3 means three commits prior to the HEAD (Git uses zero based index). You can select the appropriate commit by its hash.
 Type "squash"
 
             After the previous step, the editor window will show up offering you to input the command for each commit. All you need to do is replacing "pick" with "squash" or "s" , starting from the second line. For top one keep "pick" as is . (which means you will provide a new comment for this commit in the next step)  Then, save the file.
@@ -30,6 +30,8 @@ pick CommitMessageThree
 pick CommitMessageOne
 squash CommitMessageTwo
 squash CommitMessageThree
+
+The line you mark up with the keyword 'squash' will be combined with the line directly above! 
 
 ![image](https://user-images.githubusercontent.com/61636643/185156924-791e9d90-f163-45d6-99cf-1ffa7b9b2b55.png)
 
