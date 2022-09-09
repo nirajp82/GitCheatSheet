@@ -132,6 +132,28 @@ Git push origin master --tags
 Git push origin :[tagName]
 git push --force-with-lease
 ####
+Revert changes
+Revert changes:
+
+•	>> git fetch --prune --tags –progress
+•	Check out the branch that contains the commit that we want to revert. 
+o	If Branch does not exists
+	>> git switch -t <<origin/branch_name>>
+o	If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
+	>> git switch <<branch_name>>
+	>> git rebase
+•	Create a new branch off of the branch that contains commits that we need to revert 
+o	>> git switch -c <<NewBranchName_Revert_Changes>>
+•	Find out the commit # that you want to revert
+o	>> git revert <<Commit_Number>>
+•	Push changes to remote
+o	git push --set-upstream origin <<NewBranchName_Revert_Changes>>
+•	Create a PR that targets the branch that contains commit that we have to remove
+o	In the PR , Source will be <<NewBranchName_Revert_Changes>> and destination will be <<branch_name>>
+
+
+
+###
 Zip modified files to C:\ Drive
 zip "C:\ModifiedFiles_$(git branch --show-current)_$((Get-Date).ToString('yyyyMMdd_HHmmss')).zip" $(git ls-files --modified)
 ####
