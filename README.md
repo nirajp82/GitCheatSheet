@@ -8,6 +8,7 @@ Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 
+
 #Import the modules
 Import-Module posh-git
 Import-Module oh-my-posh
@@ -119,6 +120,13 @@ Git stash show [stash@index]
 Git stash apply [stash@index] 
 Git stash clear
 Git stash branch [branch name]
+
+#
+Delete the most recent commit, without destroying the work you've done:
+```git reset --soft HEAD~1```
+
+Delete the most recent commit and remove changes:
+```git reset --hard HEAD~1```
 
 Git tag [tagName]
 Git tag --list
