@@ -67,10 +67,7 @@ Git rebase
 ls .git
 
 $ git reset --hard HEAD^      (going back to the commit before HEAD)
-The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.
-
-git switch -c <new-branch>: Create a new branch named <new-branch> starting at <start-point> before switching to the branch
-	
+The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.	
 
 git fetch
 git -h
@@ -105,6 +102,8 @@ Git pull [branch name] {{snapshot hash (commit)}}
 Git switch -t [branch name] - Checkout Remote Branch 
 	FOR EX.  git switch -t 'origin/branch_name'
 Git switch -t [branch name]
+```git switch -c <new-branch>```: Create a new branch named "<new-branch>" starting at <start-point> before switching to the branch
+
 
 Git rebase --abort
 Git rebase --continue
