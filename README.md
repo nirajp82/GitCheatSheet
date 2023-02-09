@@ -69,6 +69,9 @@ ls .git
 $ git reset --hard HEAD^      (going back to the commit before HEAD)
 The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.
 
+git switch -c <new-branch>: Create a new branch named <new-branch> starting at <start-point> before switching to the branch
+	
+
 git fetch
 git -h
 git status
