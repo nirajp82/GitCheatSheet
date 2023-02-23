@@ -10,23 +10,21 @@
   - **Cherry picking:** is a powerful tool that can help you manage changes between branches in Git. However, it is important to use it carefully, as it can also introduce conflicts or break the code if used incorrectly.
 
 * **How to apply selective changes using cherry-pick Command?**
-    To apply changes selectively using cherry pick in Git, you can specify the commit(s) and the specific files or lines you want to apply. Here's an example of how to do this:
-    
-   -. Identify the commit that contains the changes you want to apply. You can use `git log` to find the commit hash or commit message that identifies the commit.
+    To apply changes selectively using cherry pick in Git, you can specify the commit(s) and the specific files or lines you want to apply. Here's an example of how to do this:    
+   - Identify the commit that contains the changes you want to apply. You can use `git log` to find the commit hash or commit message that identifies the commit.
      
-   -. Use `git cherry-pick` with the `-n` option to apply the changes, but without automatically committing the changes. For example:
-     `git cherry-pick -n <commit-hash>`
+   - Use `git cherry-pick` with the `-n` option to apply the changes, but without automatically committing the changes. For example:
+   	`git cherry-pick -n <commit-hash>`
 
-   -. Use `git add` to stage the specific changes you want to apply. For example, if you only want to apply changes to a specific file, you can use:
-      `git add path/to/file`
+   - Use `git add` to stage the specific changes you want to apply. For example, if you only want to apply changes to a specific file, you can use:
+     	`git add path/to/file`
 
-   -. If you only want to apply changes to specific lines in a file, you can use:
-      `git add -p path/to/file`
-	
+   - If you only want to apply changes to specific lines in a file, you can use:
+   	`git add -p path/to/file`
 	This will open an interactive prompt where you can choose which changes to stage.
-
-   -. Use `git commit` to create a new commit with the selected changes. Be sure to include a descriptive commit message that explains what changes were made. For example:
-      `git commit -m "Apply changes to path/to/file from commit <commit-hash>"`
+	
+   - Use `git commit` to create a new commit with the selected changes. Be sure to include a descriptive commit message that explains what changes were made. For example:
+   	`git commit -m "Apply changes to path/to/file from commit <commit-hash>"`
 	
 	This commit will only include the specific changes you selected, and not any other changes that were made in the original commit.
 	
