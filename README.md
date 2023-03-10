@@ -14,74 +14,64 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 * Import-Module oh-my-posh
 * #Set-PoshPrompt -Theme Paradox
 * Set-PoshPrompt C:\Users\NirajP\Documents\PowerShell\Themes\agnoster.omp.json
-* # Produce UTF-8 by default
-* # https://news.ycombinator.com/item?id=12991690
+* #Produce UTF-8 by default
+* #https://news.ycombinator.com/item?id=12991690
 * $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
-* # bash-style completion
+* #bash-style completion
 * Set-PSReadlineKeyHandler -Key Tab -Function Complete
-
 #
+## https://www.interviewbit.com/git-interview-questions/
 #
-https://www.interviewbit.com/git-interview-questions/
-#
-#
-Resolve Git Conflict while pushing the code
-######
-git switch Target_Branch
-git rebase Master_Branch
-----#Perform following steps for each conflict
-	Resolve Conflict in Tortist Git
-	git rebase --continue
-	vi editor will open, Add comment or exit by :q
------Once conflict resolves push the changes to TargetBranch	
-git push --force-with-lease
+## How tesolve Git Conflict while pushing the code
+* git switch Target_Branch
+* git rebase Master_Branch
+* ----#Perform following steps for each conflict
+	* Resolve Conflict in Tortist Git
+	* git rebase --continue
+	* vi editor will open, Add comment or exit by :q
+* -----Once conflict resolves push the changes to TargetBranch	
+* git push --force-with-lease
 ######
 #
-git cherry-pick : Apply the changes introduced by some existing commits \
 
-Assume we have branch A with (X, Y, Z) commits. We need to add these commits to branch B. We are going to use the cherry-pick operations.
-
-When we use cherry-pick, we should add commits on branch B in the same chronological order that the commits appear in Branch A.
-
-cherry-pick does support a range of commits, but if you have merge commits in that range, it gets really complicated.
-
-git checkout B \
-git cherry-pick SHA-COMMIT-X \
-git cherry-pick SHA-COMMIT-Y \
-git cherry-pick SHA-COMMIT-Z \
-![image](https://user-images.githubusercontent.com/61636643/177572907-eedb7dff-836b-4283-84bd-6004fc9b8bff.png)
-Reference: https://stackoverflow.com/questions/2474353/how-to-copy-commits-from-one-branch-to-another.
+# git cherry-pick : Apply the changes introduced by some existing commits
+	Assume we have branch A with (X, Y, Z) commits. We need to add these commits to branch B. We are going to use the cherry-pick operations.
+	When we use cherry-pick, we should add commits on branch B in the same chronological order that the commits appear in Branch A.
+	cherry-pick does support a range of commits, but if you have merge commits in that range, it gets really complicated.
+	* git checkout B \
+	* git cherry-pick SHA-COMMIT-X \
+	* git cherry-pick SHA-COMMIT-Y \
+	*  git cherry-pick SHA-COMMIT-Z \
+	* ![image](https://user-images.githubusercontent.com/61636643/177572907-eedb7dff-836b-4283-84bd-6004fc9b8bff.png)
+	Reference: https://stackoverflow.com/questions/2474353/how-to-copy-commits-from-one-branch-to-another.
 
 #
-git log
-git log --graph --decorate --oneline
-git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
-Git reset HEAD
-$ git reset --hard HEAD       (going back to HEAD)
-git reset --hard
-git rebase continue
-Git fetch origin
-Git rebase
-ls .git
-
-$ git reset --hard HEAD^      (going back to the commit before HEAD)
-The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.	
-
-git fetch
-git -h
-git status
-git add 
-Git add .
-git show some_commit_sha1  -- *.cs | git apply -R :---- Revert changes to commit 
-git fetch --prune --tags --progress: 
-git commit -m "Your message"
-git commit --amend
-git commit -a -amend -m "Your message"
-git commit -am
-git push --force-with-lease
-Git checkout --[filename]
-Git checkout -b: To Create and switch branch 
-git checkout -t 'remote branch name' - Checkout existing remote branch
+* git log  --oneline --decorate --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"
+* git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
+* Git reset HEAD
+* $ git reset --hard HEAD       (going back to HEAD)
+* git reset --hard
+* git rebase continue
+* Git fetch origin
+* Git rebase
+* ls .git
+* $ git reset --hard HEAD^      (going back to the commit before HEAD)
+	The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.	
+* git fetch
+* git -h
+* git status
+* git add 
+* Git add .
+* git show some_commit_sha1  -- *.cs | git apply -R :---- Revert changes to commit 
+* git fetch --prune --tags --progress: 
+* git commit -m "Your message"
+* git commit --amend
+* git commit -a -amend -m "Your message"
+* git commit -am
+* git push --force-with-lease
+* git checkout --[filename]
+* git checkout -b: To Create and switch branch 
+* git checkout -t 'remote branch name' - Checkout existing remote branch
 git branch --all --sort=-committerdate
 Git restore --[filename]
 git restore --staged: To unstage, staged file (Added but not committed yet)
