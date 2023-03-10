@@ -72,66 +72,64 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 * git checkout --[filename]
 * git checkout -b: To Create and switch branch 
 * git checkout -t 'remote branch name' - Checkout existing remote branch
-git branch --all --sort=-committerdate
-Git restore --[filename]
-git restore --staged: To unstage, staged file (Added but not committed yet)
-Git diff --staged [filename]
-Git difftool [filename]
-Git diff [COMMIT_ID] [FILENAME] [OTHER_COMMIT_ID] Git diff [local_branch] [remote_branch_name]
-Git diff [local_branch] [other_branch_name]
-Git merge [target_branch_name] -m
-git diff --name-only US120006_LoggingWithAppInsights origin/master
-Get-ChildItem .\ -include bin,obj -Recurse | forech ($_) {​​ remove-item $_.fullname -Force -Recurse }​​
+* git branch --all --sort=-committerdate
+* git restore --[filename]
+* git restore --staged: To unstage, staged file (Added but not committed yet)
+* git diff --staged [filename]
+* git difftool [filename]
+* git diff [COMMIT_ID] [FILENAME] [OTHER_COMMIT_ID] Git diff [local_branch] [remote_branch_name]
+* git diff [local_branch] [other_branch_name]
+* git merge [target_branch_name] -m
+* git diff --name-only US120006_LoggingWithAppInsights origin/master
+* Get-ChildItem .\ -include bin,obj -Recurse | forech ($_) {​​ remove-item $_.fullname -Force -Recurse }​​
 
-Git branch -a: list all branch
-Git branch -d: Delete branch
-Git pull [branch name] {{snapshot hash (commit)}}
+* gGit branch -a: list all branch
+* gGit branch -d: Delete branch
+* gGit pull [branch name] {{snapshot hash (commit)}}
 
-Git switch -t [branch name] - Checkout Remote Branch 
-	FOR EX.  git switch -t 'origin/branch_name'
-Git switch -t [branch name]
-```git switch -c <new-branch>```: Create a new branch named "<new-branch>" starting at <start-point> before switching to the branch
+* git switch -t [branch name] - Checkout Remote Branch 
+	* FOR EX.  git switch -t 'origin/branch_name'
+* git switch -c [branch name]
+	* ```git switch -c <new-branch>```: Create a new branch named "<new-branch>" starting at <start-point> before switching to the branch
 
+* git rebase --abort
+* git rebase --continue
+* git rebase --interactive 
+* git rebase [source-branch-name] -- Rebase current branch with source branch changes 
+* git pull --rebase [branch name]
 
-Git rebase --abort
-Git rebase --continue
-Git rebase --interactive 
-Git rebase [source-branch-name] -- Rebase current branch with source branch changes 
-Git pull --rebase [branch name]
+* git stash: stash in Git saves uncommitted changes so you can work on other things in your repository without losing your work.
+* git stash save [message]
+* git stash apply
+* git stash list
+* git stash drop [stash@index]
+* git stash -u
+* git stash p
+* git stash show [stash@index]
+* git stash apply [stash@index] 
+* git stash clear
+* git stash branch [branch name]
 
-Git stash: stash in Git saves uncommitted changes so you can work on other things in your repository without losing your work.
-Git stash save [message]
-Git stash apply
-Git stash list
-Git stash drop [stash@index]
-Git stash -u
-Git stash p
-Git stash show [stash@index]
-Git stash apply [stash@index] 
-Git stash clear
-Git stash branch [branch name]
-
-#
-Delete the most recent commit, without destroying the work you've done:
+### How to delete the most recent commit, without destroying the work you've done:
 ```git reset --soft HEAD~1```
 
-Delete the most recent commit and remove changes:
+### Delete the most recent commit and remove changes:
 ```git reset --hard HEAD~1```
 
-Git tag [tagName]
-Git tag --list
-Git tag --delete [tagName]
-Git tag -a [annotation]
-Git difftool [tag_name_1] [tag_name_2]
-Git tag -a [annotation] [commit_id]
-Git tag -a [tagName] -f [new_commit_id] 
-Git push origin master [tag_name]
-Git push origin master --tags 
-Git push origin :[tagName]
-git push --force-with-lease
+* git tag [tagName]
+* git tag --list
+* git tag --delete [tagName]
+* git tag -a [annotation]
+* git difftool [tag_name_1] [tag_name_2]
+* git tag -a [annotation] [commit_id]
+* git tag -a [tagName] -f [new_commit_id] 
+* git push origin master [tag_name]
+* git push origin master --tags 
+* git push origin :[tagName]
+* git push --force-with-lease
 ####
-Revert changes
-Revert changes:
+
+# How to Revert changes:
 
 •	>> git fetch --prune --tags –progress
 •	Check out the branch that contains the commit that we want to revert. 
