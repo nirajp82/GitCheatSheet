@@ -83,9 +83,9 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 * git diff --name-only US120006_LoggingWithAppInsights origin/master
 * Get-ChildItem .\ -include bin,obj -Recurse | forech ($_) {​​ remove-item $_.fullname -Force -Recurse }​​
 
-* gGit branch -a: list all branch
-* gGit branch -d: Delete branch
-* gGit pull [branch name] {{snapshot hash (commit)}}
+* git branch -a: list all branch
+* git branch -d: Delete branch
+* git pull [branch name] {{snapshot hash (commit)}}
 
 * git switch -t [branch name] - Checkout Remote Branch 
 	* FOR EX.  git switch -t 'origin/branch_name'
@@ -130,9 +130,8 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 ####
 
 # How to Revert changes:
-
-•	>> git fetch --prune --tags –progress
-•	Check out the branch that contains the commit that we want to revert. 
+	* git fetch --prune --tags –progress
+	#####	Check out the branch that contains the commit that we want to revert. 
 o	If Branch does not exists
 	>> git switch -t <<origin/branch_name>>
 o	If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
