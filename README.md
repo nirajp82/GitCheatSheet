@@ -150,7 +150,7 @@ o	In the PR , Source will be <<NewBranchName_Revert_Changes>> and destination wi
 
 ###
 Zip modified files to C:\ Drive
-zip "C:\ModifiedFiles_$(git branch --show-current)_$((Get-Date).ToString('yyyyMMdd_HHmmss')).zip" $(git ls-files --modified)
+zip "C:\MyFolder_$(git branch --show-current)_$((Get-Date).ToString('yyyyMMdd_HHmmss')).zip" $(git diff --name-only --cached --diff-filter=AM)
 ####
 Rebase vs merge  
 Short Version
