@@ -6,9 +6,9 @@ How to revert changes from branch
   * If Branch does not exists in local 
 	    * >> `git switch -t <<origin/branch_name>>`
   * If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
-      * >> `git switch <<target_branch_name>>`
-	    * >> `git rebase`
-*	Create a new branch off of the branch that contains commits that we need to revert 
+      	* >> `git switch <<target_branch_name>>`
+	* >> `git rebase`
+* Create a new branch off of the branch that contains commits that we need to revert 
 	  * >> `git switch -c <<NewBranchName_Revert_Changes>>`
 * Find out the commit # that you want to revert
     * >> `git revert <<Commit_Number>>`
