@@ -2,4 +2,4 @@
 git push origin --delete {{BRANCH_NAME}}
 
 # Delete Local Branch
-git branch -D {{BRANCH_NAME}}
+git branch -d {{BRANCH_NAME}}
