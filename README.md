@@ -175,10 +175,6 @@ Rebase
 A second scenario would be if you started doing some development and then another developer made an unrelated change. You probably want to pull and then rebase to base your changes from the current version from the repository.
 
 #####
-
-
-
-
 git ls-files
 
 $ git init
@@ -215,11 +211,11 @@ Committed means that Git has officially taken a snapshot of the files in the st
 From <https://snipcademy.com/git-fundamentals> 
 
 
-Configuration of mergetool
-git config --global merge.tool bc4
-git config --global mergetool.bc4.path "C:/Program Files/Beyond Compare 4/BCompare.exe"
-git config --global diff.tool bc4
-git config --global difftool.bc4.path "C:/Program Files/Beyond Compare 4/BCompare.exe"
-git config --global difftool.prompt false
-git config --global mergetool.prompt false
+### Configuration of mergetool
+* git config --global merge.tool bc4
+* git config --global mergetool.bc4.path "C:/Program Files/Beyond Compare 4/BCompare.exe"
+* git config --global diff.tool bc4
+* git config --global difftool.bc4.path "C:/Program Files/Beyond Compare 4/BCompare.exe"
+* git config --global difftool.prompt false
+* git config --global mergetool.prompt false
 ![image](https://user-images.githubusercontent.com/61636643/150656490-8da2f9d6-7f33-4960-b110-3bab00824f17.png)
