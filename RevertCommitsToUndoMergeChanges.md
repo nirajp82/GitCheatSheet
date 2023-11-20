@@ -16,3 +16,4 @@ How to revert changes from branch
 	* >> `git push --set-upstream origin <<NewBranchName_Revert_Changes>>`
 * Create a PR that targets the branch that contains commit that we have to remove
 * In the PR , Source will be <<NewBranchName_Revert_Changes>> and destination will be <<target_branch_name>>
+* Once Approved merge the changes in the  <<target_branch_name>>
