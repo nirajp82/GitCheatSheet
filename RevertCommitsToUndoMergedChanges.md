@@ -2,7 +2,7 @@ How to revert changes from branch
 
 * Get latest branch
   *	>> `git fetch --prune --tags –progress`
-* Check out the branch that contains the commit from where we want to revert the commit. 
+* Check out the branch that contains the commit from where we have to revert the commit (Target branch from where we have to revert the commit). 
   * If Branch does not exists in local 
   	* >> `git switch -t <<origin/target_branch_name>>`
   * If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
