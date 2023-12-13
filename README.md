@@ -22,99 +22,225 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 #
 ## https://www.interviewbit.com/git-interview-questions/
 #
-## How tesolve Git Conflict while pushing the code
-* git switch Target_Branch
-* git rebase Master_Branch
-* ----#Perform following steps for each conflict
-	* Resolve Conflict in Tortist Git
-	* git rebase --continue
-	* vi editor will open, Add comment or exit by :q
-* -----Once conflict resolves push the changes to TargetBranch	
-* git push --force-with-lease
-######
-#
 
-# git cherry-pick : Apply the changes introduced by some existing commits
-	Assume we have branch A with (X, Y, Z) commits. We need to add these commits to branch B. We are going to use the cherry-pick operations.
-	When we use cherry-pick, we should add commits on branch B in the same chronological order that the commits appear in Branch A.
-	cherry-pick does support a range of commits, but if you have merge commits in that range, it gets really complicated.
-	* git checkout B \
-	* git cherry-pick SHA-COMMIT-X \
-	* git cherry-pick SHA-COMMIT-Y \
-	*  git cherry-pick SHA-COMMIT-Z \
-	* ![image](https://user-images.githubusercontent.com/61636643/177572907-eedb7dff-836b-4283-84bd-6004fc9b8bff.png)
-	Reference: https://stackoverflow.com/questions/2474353/how-to-copy-commits-from-one-branch-to-another.
+## How to Resolve Git Conflict while pushing the code
 
-#
-* git log  --oneline --decorate --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"
-* git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
-* Git reset HEAD
-* $ git reset --hard HEAD       (going back to HEAD)
-* git reset --hard
-* git rebase continue
-* Git fetch origin
-* Git rebase
-* ls .git
-* $ git reset --hard HEAD^      (going back to the commit before HEAD)
-	The “–hard” option is used in order to reset the files of the index (or the staging area) and of the working directory.	
-* git fetch
-* git -h
-* git status
-* git add 
-* Git add .
-* git show some_commit_sha1  -- *.cs | git apply -R :---- Revert changes to commit 
-* git fetch --prune --tags --progress: 
-* git commit -m "Your message"
-* git commit --amend
-* git commit -a -amend -m "Your message"
-* git commit -am
-* git push --force-with-lease
-* git checkout --[filename]
-* git checkout -b: To Create and switch branch 
-* git checkout -t 'remote branch name' - Checkout existing remote branch
-* git branch --all --sort=-committerdate
-* git restore --[filename]
-* git restore --staged: To unstage, staged file (Added but not committed yet)
-* git diff --staged [filename]
-* git difftool [filename]
-* git diff [COMMIT_ID] [FILENAME] [OTHER_COMMIT_ID] Git diff [local_branch] [remote_branch_name]
-* git diff [local_branch] [other_branch_name]
-* git merge [target_branch_name] -m
-* git diff --name-only US120006_LoggingWithAppInsights origin/master
-* Get-ChildItem .\ -include bin,obj -Recurse | forech ($_) {​​ remove-item $_.fullname -Force -Recurse }​​
+```bash
+# Switch to the target branch
+git switch Target_Branch
 
-* git branch -a: list all branch
-* git branch -d: Delete branch
-* git pull [branch name] {{snapshot hash (commit)}}
+# Rebase the target branch with changes from the master branch
+git rebase Master_Branch
 
-* git switch -t [branch name] - Checkout Remote Branch 
-	* FOR EX.  git switch -t 'origin/branch_name'
-* git switch -c [branch name]
-	* ```git switch -c <new-branch>```: Create a new branch named "<new-branch>" starting at <start-point> before switching to the branch
+# Resolve conflicts in TortoiseGit
 
-* git rebase --abort
-* git rebase --continue
-* git rebase --interactive 
-* git rebase [source-branch-name] -- Rebase current branch with source branch changes 
-* git pull --rebase [branch name]
+# Continue with the rebase after conflict resolution
+git rebase --continue
 
-* git stash: stash in Git saves uncommitted changes so you can work on other things in your repository without losing your work.
-* git stash save [message]
-* git stash apply
-* git stash list
-* git stash drop [stash@index]
-* git stash -u
-* git stash p
-* git stash show [stash@index]
-* git stash apply [stash@index] 
-* git stash clear
-* git stash branch [branch name]
+# If using vim editor, add comments or exit by typing ":q"
 
-### How to delete the most recent commit, without destroying the work you've done:
-```git reset --soft HEAD~1```
+# Once conflicts are resolved, push the changes to the target branch
+git push --force-with-lease
+```
 
-### Delete the most recent commit and remove changes:
-```git reset --hard HEAD~1```
+## Git Cherry-Pick
+
+Assume we have branch A with (X, Y, Z) commits. We need to add these commits to branch B.
+
+```bash
+# Checkout to Branch B
+git checkout B
+
+# Cherry-pick commits from Branch A to Branch B
+git cherry-pick SHA-COMMIT-X
+git cherry-pick SHA-COMMIT-Y
+git cherry-pick SHA-COMMIT-Z
+```
+
+Reference: [Stack Overflow](https://stackoverflow.com/questions/2474353/how-to-copy-commits-from-one-branch-to-another).
+
+## Git Log Visualization
+
+```bash
+# View a decorated, graph-based, one-line log with author and date information
+git log --oneline --decorate --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"
+```
+
+## Git Reset
+
+```bash
+# Reset to a specific commit hash
+git reset --hard e5555ca54258113a51c417b2f27edcfac69dbb6f
+
+# Reset to HEAD
+git reset --hard HEAD
+
+# Reset all changes, including staged files
+git reset --hard
+
+# Continue a rebase
+git rebase --continue
+```
+
+## Git Fetch and Rebase
+
+```bash
+# Fetch changes from the remote repository
+git fetch origin
+
+# Rebase the current branch with remote changes
+git rebase
+```
+
+## Other Git Commands
+
+```bash
+# List all files and directories in the .git directory
+ls .git
+
+# Fetch changes from the remote repository and prune deleted branches
+git fetch --prune --tags --progress
+
+# Commit changes with a message
+git commit -m "Your message"
+
+# Amend the last commit
+git commit --amend
+
+# Add and commit changes with a message
+git commit -a -amend -m "Your message"
+
+# Add and commit changes
+git commit -am
+
+# Force-push changes to the remote repository
+git push --force-with-lease
+
+# Discard changes in a file
+git checkout -- [filename]
+
+# Create and switch to a new branch
+git checkout -b <branch_name>
+
+# Checkout an existing remote branch
+git checkout -t 'remote branch name'
+
+# List all branches sorted by commit date
+git branch --all --sort=-committerdate
+
+# Restore changes in a file
+git restore -- [filename]
+
+# Unstage a staged file
+git restore --staged [filename]
+
+# View changes between staged and last commit
+git diff --staged [filename]
+
+# Open a visual diff tool for changes in a file
+git difftool [filename]
+
+# View changes between two commits
+git diff [COMMIT_ID] [FILENAME] [OTHER_COMMIT_ID]
+
+# View changes between a local branch and a remote branch
+git diff [local_branch] [remote_branch_name]
+
+# Merge changes from a target branch with a commit message
+git merge [target_branch_name] -m "Your message"
+
+# View only the names of files changed between branches
+git diff --name-only US120006_LoggingWithAppInsights origin/master
+
+# Remove bin and obj directories recursively
+Get-ChildItem .\ -include bin,obj -Recurse | foreach { remove-item $_.fullname -Force -Recurse }
+```
+
+## Git Branch and Pull Commands
+
+```bash
+# List all branches
+git branch -a
+
+# Delete a branch
+git branch -d <branch_name>
+
+# Pull changes from a specific branch and commit hash
+git pull [branch name] <commit_hash>
+```
+
+## Git Switch Commands
+
+```bash
+# Checkout a remote branch
+git switch -t 'origin/branch_name'
+
+# Create and switch to a new branch
+git switch -c <new-branch>
+```
+
+## Git Rebase Commands
+
+```bash
+# Abort an ongoing rebase
+git rebase --abort
+
+# Continue an ongoing rebase
+git rebase --continue
+
+# Perform an interactive rebase
+git rebase --interactive
+
+# Rebase the current branch with changes from another branch
+git rebase [source-branch-name]
+
+# Pull with rebase
+git pull --rebase [branch name]
+```
+
+## Git Stash Commands
+
+```bash
+# Save uncommitted changes to the stash with a message
+git stash save [message]
+
+# Apply changes from the stash
+git stash apply
+
+# List all stashes
+git stash list
+
+# Drop a specific stash
+git stash drop [stash@index]
+
+# Stash untracked files as well
+git stash -u
+
+# Stash changes with pathspec
+git stash -p
+
+# Show changes in a specific stash
+git stash show [stash@index]
+
+# Apply changes from a specific stash
+git stash apply [stash@index]
+
+# Clear all stashes
+git stash clear
+
+# Create a new branch from a stash
+git stash branch [branch name]
+```
+
+## How to Delete the Most Recent Commit
+
+```bash
+# Delete the most recent commit, preserving changes
+git reset --soft HEAD~1
+
+# Delete the most recent commit and remove changes
+git reset --hard HEAD~1
+```
 
 * git tag [tagName]
 * git tag --list
