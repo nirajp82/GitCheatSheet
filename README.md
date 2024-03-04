@@ -1,7 +1,7 @@
 # Git Cheat Sheet
 Reference: https://www.interviewbit.com/git-cheat-sheet/
 #
-
+- https://github.com/nirajp82/Powershell_Util/blob/main/Git_Powershell_OhMyPosh_Setup.md
 - https://anshbadaya.medium.com/customizing-windows-terminal-with-posh-git-and-oh-my-posh-752c0e0eb8cb
 - https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal
 - Install-Module posh-git -Scope CurrentUser
