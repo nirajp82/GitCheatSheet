@@ -231,6 +231,15 @@ git stash clear
 git stash branch [branch name]
 ```
 
+### Ignore specific files.
+
+```
+git update-index --assume-unchanged <file>
+```
+git update-index --assume-unchanged is a Git command that allows you to temporarily ignore changes to a specific file, making Git think that the file hasn't been modified, even though it may have been.
+http://source.kohlerville.com/2009/02/untrack-files-in-git/
+
+
 ## How to Delete the Most Recent Commit
 
 ```bash
@@ -257,27 +266,32 @@ git reset --hard HEAD~1
 # How to Revert changes:
 	* git fetch --prune --tags –progress
 	#####	Check out the branch that contains the commit that we want to revert. 
-o	If Branch does not exists
-	>> git switch -t <<origin/branch_name>>
-o	If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
-	>> git switch <<branch_name>>
-	>> git rebase
-•	Create a new branch off of the branch that contains commits that we need to revert 
-o	>> git switch -c <<NewBranchName_Revert_Changes>>
-•	Find out the commit # that you want to revert
-o	>> git revert <<Commit_Number>>
-•	Push changes to remote
-o	git push --set-upstream origin <<NewBranchName_Revert_Changes>>
-•	Create a PR that targets the branch that contains commit that we have to remove
-o	In the PR , Source will be <<NewBranchName_Revert_Changes>> and destination will be <<branch_name>>
-
-
+	* If Branch does not exists
+	``` git switch -t <<origin/branch_name>> ```
+	* If branch exists (Switch to that branch and apply latest changes from remote that was fetched earlier using rebase)
+```
+	git switch <<branch_name>>
+	git rebase
+```
+	* Create a new branch off of the branch that contains commits that we need to revert 
+	``` git switch -c <<NewBranchName_Revert_Changes>>
+	* Find out the commit # that you want to revert
+``
+	git revert <<Commit_Number>>
+``
+	* Push changes to remote
+`` 
+ git push --set-upstream origin <<NewBranchName_Revert_Changes>> 
+``
+	* Create a PR that targets the branch that contains commit that we have to remove
+	* In the PR , Source will be <<NewBranchName_Revert_Changes>> and destination will be <<branch_name>>
 
 ###
 Zip modified files to C:\ Drive
 zip "C:\MyFolder_$(git branch --show-current)_$((Get-Date).ToString('yyyyMMdd_HHmmss')).zip" $(git diff --name-only --cached --diff-filter=AM)
 ####
-Rebase vs merge  
+
+##### Rebase vs merge  
 Short Version
 Merge takes all the changes in one branch and merges them into another branch in one commit.
 Rebase says  use another branch as the new base .
