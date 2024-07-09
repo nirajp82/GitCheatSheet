@@ -239,6 +239,10 @@ git update-index --assume-unchanged <file>
 git update-index --assume-unchanged is a Git command that allows you to temporarily ignore changes to a specific file, making Git think that the file hasn't been modified, even though it may have been.
 http://source.kohlerville.com/2009/02/untrack-files-in-git/
 
+##### Find all the changes done by specific user in last 6 month (Time period)
+```bash
+git log --author="niraj.patel@cyberark.com" --name-only --pretty=format: --since="6 months ago" | sort -u
+```
 
 ## How to Delete the Most Recent Commit
 
