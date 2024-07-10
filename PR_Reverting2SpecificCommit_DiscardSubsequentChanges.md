@@ -10,7 +10,7 @@ To go back to a specific commit in Git and discard all the commits that came aft
    Copy the commit hash that corresponds to the commit you want to go back to.
 
 2. **Reset to the Specific Commit:**
-   Use the `git reset` command with the `--hard` option to reset the branch to the specific commit. Replace `<commit-hash>` with the actual hash you copied.
+   Use the `git reset` command with the `--hard` option to reset the local branch to the specific commit. Replace `<commit-hash>` with the actual hash you copied.
 
    ```bash
    git reset --hard <commit-hash>
@@ -22,10 +22,8 @@ To go back to a specific commit in Git and discard all the commits that came aft
    If you have already pushed the commits you want to discard to a remote repository, you may need to force push to update the remote repository. Be cautious when force pushing, as it overwrites the remote branch history.
 
    ```bash
-   git push origin <branch-name> --force-with-lease
+   git push --force-with-lease
    ```
-
-   Replace `<branch-name>` with the name of the branch you are working on.
 
 **Keep in mind that using `git reset --hard` is a destructive operation, and it discards all changes in your working directory and staging area that are not in the specified commit. Make sure you really want to discard those changes before proceeding.**
 
