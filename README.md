@@ -62,9 +62,8 @@ Reference: [Stack Overflow](https://stackoverflow.com/questions/2474353/how-to-c
 
 ```bash
 # View a decorated, graph-based, one-line log with author and date information
-git log --oneline --decorate --graph --pretty=format:"%h%x09%an%x09%ad%x09%s"
+git log --oneline --decorate --graph --pretty=format:"%C(auto)%h%x09%an%x09%ad%x09%s"
 ```
-
 ## Git Reset
 
 ```bash
@@ -241,7 +240,7 @@ http://source.kohlerville.com/2009/02/untrack-files-in-git/
 
 ##### Find all the changes done by specific user in last 6 month (Time period)
 ```bash
-git log --author="niraj.patel@cyberark.com" --name-only --pretty=format: --since="6 months ago" | sort -u
+git log --author="John.Doe@abc.io" --name-only --pretty=format: --since="6 months ago" | sort -u
 ```
 
 ## How to Delete the Most Recent Commit
