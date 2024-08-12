@@ -26,7 +26,7 @@ git switch -c <NewBranchName_Revert_Changes>
 Find the commit hash of the commit you want to revert, and then revert it.
 
 ```bash
-git revert <Commit_Number>
+git revert <Commit_Hash>
 ```
 
 #### 5. Push the Revert Branch to Remote
