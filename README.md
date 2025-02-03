@@ -62,7 +62,7 @@ Reference: [Stack Overflow](https://stackoverflow.com/questions/2474353/how-to-c
 
 ```bash
 # View a decorated, graph-based, one-line log with author and date information
-git log --oneline --decorate --graph --pretty=format:"%C(auto)%h%x09%an%x09%ad%x09%s"
+git log --pretty="%C(Yellow)%h%C(reset) %ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s%x09%C(Magenta)(%d)%C(reset)" --date=short -15 --decorate --remotes --graph
 ```
 ## Git Reset
 
