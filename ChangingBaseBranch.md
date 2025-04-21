@@ -5,10 +5,10 @@
 
 You have the following Git branch hierarchy:
 
-```
-master
-  └─> Branch1
-         └─> Branch2
+   ```
+    master
+      └─> Branch1
+             └─> Branch2
     ```
 
 - You've created `Branch1` from `master`.
