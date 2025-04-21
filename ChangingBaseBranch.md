@@ -9,7 +9,7 @@ You have the following Git branch hierarchy:
 master
   └─> Branch1
          └─> Branch2
-```
+    ```
 
 - You've created `Branch1` from `master`.
 - Then you created `Branch2` from `Branch1`.
@@ -27,9 +27,9 @@ Rebase `Branch2` so that it looks like it was branched directly from `master`, *
 ## 🔧 Step-by-Step Guide
 
 1. **Switch to your working branch**:
-   ```bash
+```bash
    git checkout Branch2
-   ```
+```
 
 2. **Rebase `Branch2` onto `master`, skipping `Branch1`**:
    ```bash
@@ -40,8 +40,6 @@ Rebase `Branch2` so that it looks like it was branched directly from `master`, *
    - It takes the commits that exist in `Branch2` but **not in `Branch1`**.
    - Then it **re-applies those commits on top of `master`**.
    - The result: `Branch2` is now based off `master`.
-
----
 
 ## 🔐 Pushing the Rebased Branch
 
@@ -57,8 +55,6 @@ git push --force-with-lease
 ### Why use `--force-with-lease`?
 - It ensures you're not accidentally overwriting someone else's changes.
 - It only pushes if the remote branch is exactly as you last saw it.
-
----
 
 ## ⚠️ Handling Merge Conflicts
 
@@ -80,8 +76,6 @@ Or, to abort the rebase at any time:
 ```bash
 git rebase --abort
 ```
-
----
 
 ## 🎯 Final Thoughts
 
