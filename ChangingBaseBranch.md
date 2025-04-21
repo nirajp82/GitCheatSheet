@@ -16,7 +16,6 @@ master
 - You’ve already merged `Branch1` back into `master`.
 - Now, you want to **rebase `Branch2` onto `master`** instead of having it based on `Branch1`.
 
----
 
 ## ✅ Goal
 
@@ -28,7 +27,7 @@ Rebase `Branch2` so that it looks like it was branched directly from `master`, *
 
 1. **Switch to your working branch**:
 ```bash
-   git checkout Branch2
+   git switch Branch2
 ```
 
 2. **Rebase `Branch2` onto `master`, skipping `Branch1`**:
@@ -77,8 +76,3 @@ Or, to abort the rebase at any time:
 git rebase --abort
 ```
 
-## 🎯 Final Thoughts
-
-This workflow is perfect for keeping your commit history linear and clean, especially when collaborating with others or preparing feature branches for pull requests. Always use `--force-with-lease` to be kind to your teammates. 😄
-
-```
