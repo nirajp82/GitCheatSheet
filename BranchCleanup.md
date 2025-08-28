@@ -50,7 +50,7 @@ git stash pop
 git switch -c my_new_branch_clean
 ```
 
-4. **Cherry-pick your commits**
+4. **Cherry-pick all your commits that you would like to keep it in your branch**
 
 ```bash
 git cherry-pick <first-commit-sha>
